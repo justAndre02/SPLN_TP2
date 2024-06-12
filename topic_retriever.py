@@ -44,10 +44,10 @@ topic_tfidf = tfidf[topic_bow]
 index = SparseMatrixSimilarity(tfidf[corpus], num_features=len(dictionary))
 sims = index[topic_tfidf]
 
-# Sort the documents by their similarity to the topic and select the top 1000
-top_100_indices = sorted(range(len(sims)), key=lambda i: -sims[i])[:100]
-top_100_documents = [original_documents[i] for i in top_100_indices]
+# Sort the documents by their similarity to the topic and select the top 200
+top_200_indices = sorted(range(len(sims)), key=lambda i: -sims[i])[:200]
+top_200_documents = [original_documents[i] for i in top_200_indices]
 
 # Write the selected entries to a new JSON file
 with open('snippet.json', 'w', encoding='utf-8') as f:
-    json.dump(top_100_documents, f, ensure_ascii=False, indent=4)
+    json.dump(top_200_documents, f, ensure_ascii=False, indent=4)
