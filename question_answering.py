@@ -138,8 +138,9 @@ class QA_System:
 
         return answer
 
-file_path = "documentos_part_1.json"
+file_path = "snippet.json"
 qa_system = QA_System()
 qa_pairs = qa_system.preprocess_and_create_qa_pairs(file_path)
-answer = qa_system.answer_question("Onde foi assinado o acordo entre Moçambiique e Portugal?", file_path)
+question = input("Introduz a tua questão: ")
+answer = qa_system.answer_question(question, file_path)
 print(answer)
