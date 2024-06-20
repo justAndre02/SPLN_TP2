@@ -37,7 +37,8 @@ tfidf = TfidfModel(corpus)
 topic = input('Introduz o tópico da tua questão: ')
 topic_bow = dictionary.doc2bow(preprocess(topic))
 
-# Use the TF-IDF model to convert the bag-of-words topic into a TF-IDF vector
+# Use the TF-IDF model to convert the bag
+# -of-words topic into a TF-IDF vector
 topic_tfidf = tfidf[topic_bow]
 
 # Calculate the cosine similarity between the TF-IDF vector of the topic and the TF-IDF vectors of the documents
